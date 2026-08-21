@@ -1,0 +1,45 @@
+Randomness seeded to: 1651271118
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+findfigures_tests is a Catch2 v3.4.0 host application.
+Run with -? for options
+
+-------------------------------------------------------------------------------
+FindFigures - check for different figures in a matrix
+  Search for different figures in the matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:7
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:21: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+FindFigures - check for different figures in a matrix
+  Check for no pattern behavior
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:25
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:33: PASSED:
+  REQUIRE( results == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+FindFigures - check for different figures in a matrix
+  Test with empty matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:36
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:39: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ FindFigures searcher(empty_canvas); }(), "Provided matrix cannot be empty." )
+with expansion:
+  "Provided matrix cannot be empty." equals: "Provided matrix cannot be empty."
+
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
