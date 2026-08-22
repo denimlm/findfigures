@@ -27,7 +27,7 @@ uint32_t FindFigures::findFigures(uint32_t pattern=1){
                 visited.insert({row,col}); //Global visited
                 storeCoordinates.push({row,col}); //Local visited
 
-                floodFill(storeCoordinates, localStorage, visited, pattern, figurePattern);
+                floodFill(storeCoordinates, localStorage, visited, pattern);
             }
         }
     }
@@ -46,10 +46,14 @@ void FindFigures::displayMatrix(){
 }
 
 /*
-    * floodFill()
-    * This algorithm works by starting from a first pattern from witch figure is build and spreading outwards until the boundaries (no pattern) reached.
-    */
-void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, std::vector<std::vector<uint32_t>>&matrix, std::set<std::pair<uint32_t,uint32_t>>&covered, uint32_t initialPattern, uint32_t newPatterns){
+* floodFill()
+* This algorithm works by starting from a first pattern from witch figure is build and spreading outwards until the boundaries (no pattern) reached.
+* param[in] - coordinates - current coordinates identified with pattern
+* param[in] - matrix - matrix elements contain figures drawn with patterns
+* param[in] - covered - contain alredy visited indexes from matrix
+* param[in] - initialPattern - pattern contain figures
+*/
+void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix, std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern){
     uint32_t qX = 0;
     uint32_t qY = 0;
     uint32_t x = 0;
