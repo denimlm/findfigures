@@ -30,7 +30,8 @@ private:
     * param[in] - covered - contain alredy visited indexes from matrix
     * param[in] - initialPattern - pattern contain figures
     */
-    void floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix, std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern);
+    void floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix,
+                   std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern);
 
     void matrixValidation() const;
 };

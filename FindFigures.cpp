@@ -51,13 +51,14 @@ void FindFigures::displayMatrix(){
 * param[in] - covered - contain alredy visited indexes from matrix
 * param[in] - initialPattern - pattern contain figures
 */
-void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix, std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern){
+void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix,
+                            std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern) {
     uint32_t qX = 0;
     uint32_t qY = 0;
     uint32_t x = 0;
     uint32_t y = 0;
     // Local navigation
-    std::vector<std::pair<uint32_t,uint32_t>> direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};//directions [right, left, up, down]
+    std::vector<std::pair<uint32_t,uint32_t>> direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};//directions [right, left, down, up]
 
     while(!coordinates.empty()) {
         std::pair<uint32_t,uint32_t>front = coordinates.front();
@@ -69,7 +70,8 @@ void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinate
             x = qX + it.first;
             y = qY + it.second;
             // Check boundary conditions
-            if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() && matrix[x][y] == initialPattern && (covered.find({x,y})==covered.end()) ){
+            if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
+                matrix[x][y] == initialPattern && (covered.find({x,y})==covered.end()) ) {
                 covered.insert({x,y});
                 coordinates.push({x, y});
             }
