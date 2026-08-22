@@ -25,7 +25,6 @@ private:
    /*
     * floodFill()
     * This algorithm works by starting from a first pattern from witch figure is build and spreading outwards until the boundaries (no pattern) reached.
-    * This algorithm works by starting from a first pattern from witch figure is build and spreading outwards until the boundaries (no pattern) reached.
     * param[in] - coordinates - current coordinates identified with pattern
     * param[in] - matrix - matrix elements contain figures drawn with patterns
     * param[in] - covered - contain alredy visited indexes from matrix
