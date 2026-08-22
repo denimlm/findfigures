@@ -21,6 +21,7 @@ CMakeFiles/example.dir/FindFigures.cpp.o: /home/osboxes/Documents/projects/lucid
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
   /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -40,6 +41,7 @@ CMakeFiles/example.dir/FindFigures.cpp.o: /home/osboxes/Documents/projects/lucid
   /usr/include/c++/13/bits/move.h \
   /usr/include/c++/13/bits/nested_exception.h \
   /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
   /usr/include/c++/13/bits/postypes.h \
@@ -58,8 +60,11 @@ CMakeFiles/example.dir/FindFigures.cpp.o: /home/osboxes/Documents/projects/lucid
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/c++/13/bits/stl_set.h \
+  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -84,6 +89,7 @@ CMakeFiles/example.dir/FindFigures.cpp.o: /home/osboxes/Documents/projects/lucid
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
   /usr/include/c++/13/ext/numeric_traits.h \
@@ -98,6 +104,7 @@ CMakeFiles/example.dir/FindFigures.cpp.o: /home/osboxes/Documents/projects/lucid
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/queue \
+  /usr/include/c++/13/set \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -235,6 +242,7 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
   /usr/include/c++/13/bits/deque.tcc \
+  /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
@@ -254,6 +262,7 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
   /usr/include/c++/13/bits/move.h \
   /usr/include/c++/13/bits/nested_exception.h \
   /usr/include/c++/13/bits/new_allocator.h \
+  /usr/include/c++/13/bits/node_handle.h \
   /usr/include/c++/13/bits/ostream.tcc \
   /usr/include/c++/13/bits/ostream_insert.h \
   /usr/include/c++/13/bits/postypes.h \
@@ -272,8 +281,11 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_multiset.h \
   /usr/include/c++/13/bits/stl_pair.h \
   /usr/include/c++/13/bits/stl_queue.h \
+  /usr/include/c++/13/bits/stl_set.h \
+  /usr/include/c++/13/bits/stl_tree.h \
   /usr/include/c++/13/bits/stl_uninitialized.h \
   /usr/include/c++/13/bits/stl_vector.h \
   /usr/include/c++/13/bits/streambuf.tcc \
@@ -298,6 +310,7 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
   /usr/include/c++/13/debug/debug.h \
   /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
+  /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
   /usr/include/c++/13/ext/atomicity.h \
   /usr/include/c++/13/ext/numeric_traits.h \
@@ -312,6 +325,7 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/queue \
+  /usr/include/c++/13/set \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
@@ -452,8 +466,6 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
-/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
@@ -536,15 +548,17 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/include/c++/13/bits/stl_queue.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/stdlib.h:
 
 /usr/include/c++/13/bits/stl_construct.h:
-
-/usr/include/c++/13/bits/stl_algobase.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
@@ -562,11 +576,27 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
+/usr/include/c++/13/bits/stl_algobase.h:
+
+/usr/include/c++/13/bits/node_handle.h:
+
+/usr/include/c++/13/ios:
+
+/usr/include/time.h:
+
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
 /usr/include/c++/13/bits/invoke.h:
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/c++/13/set:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
@@ -587,10 +617,6 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
@@ -624,14 +650,6 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/cwchar:
 
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/c++/13/bits/exception.h:
-
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/c++/13/bits/hash_bytes.h:
@@ -650,7 +668,21 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /home/osboxes/Documents/projects/lucidlink/findfigures/FindFigures.hpp:
 
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/c++/13/bits/functexcept.h:
+
+/usr/include/c++/13/bits/stl_iterator.h:
+
 /usr/include/c++/13/string:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/c++/13/streambuf:
+
+/usr/include/c++/13/bits/exception.h:
 
 /usr/include/c++/13/bits/stl_heap.h:
 
@@ -660,17 +692,11 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/bits/locale_facets.h:
 
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/time.h:
-
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
 
@@ -692,6 +718,18 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/iostream:
 
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/c++/13/bits/erase_if.h:
+
+/usr/include/c++/13/climits:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/c++/13/cstddef:
+
+/usr/include/c++/13/vector:
+
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
@@ -704,19 +742,23 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/c++/13/bits/stl_iterator.h:
-
-/usr/include/c++/13/bits/functexcept.h:
-
-/usr/include/c++/13/ios:
-
 /usr/include/x86_64-linux-gnu/bits/endianness.h:
 
 /usr/include/c++/13/bits/basic_string.h:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/c++/13/bits/stl_queue.h:
+
+/usr/include/c++/13/bits/stl_set.h:
+
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
 
@@ -726,7 +768,15 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/c++/13/bits/postypes.h:
 
+/usr/include/c++/13/bits/stl_multiset.h:
+
 /usr/include/c++/13/bits/uses_allocator.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/wctype.h:
+
+/usr/include/c++/13/exception:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -743,14 +793,6 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 /usr/include/c++/13/cerrno:
 
 /usr/include/stdio.h:
-
-/usr/include/c++/13/climits:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/c++/13/cstddef:
-
-/usr/include/c++/13/vector:
 
 /usr/include/c++/13/clocale:
 
@@ -828,6 +870,8 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
+/usr/include/c++/13/ext/aligned_buffer.h:
+
 /usr/include/locale.h:
 
 /usr/include/pthread.h:
@@ -841,19 +885,3 @@ CMakeFiles/example.dir/main.cpp.o: /home/osboxes/Documents/projects/lucidlink/fi
 /usr/include/linux/limits.h:
 
 /usr/include/stdint.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
-
-/usr/include/c++/13/exception:
-
-/usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/x86_64-linux-gnu/asm/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:

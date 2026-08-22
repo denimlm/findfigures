@@ -1,4 +1,4 @@
-Randomness seeded to: 1651271118
+Randomness seeded to: 3851066499
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 findfigures_tests is a Catch2 v3.4.0 host application.
@@ -36,10 +36,38 @@ FindFigures - check for different figures in a matrix
 ...............................................................................
 
 /home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:39: PASSED:
-  REQUIRE_THROWS_WITH( [&](){ FindFigures searcher(empty_canvas); }(), "Provided matrix cannot be empty." )
+  REQUIRE_THROWS_WITH( [&](){ FindFigures searcher(empty_matrix); }(), "Provided matrix cannot be empty." )
 with expansion:
   "Provided matrix cannot be empty." equals: "Provided matrix cannot be empty."
 
+-------------------------------------------------------------------------------
+FindFigures - check for different figures in a matrix
+  Test interface throw with wrong pattern=0
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:46
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:53: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures(0); }(), "Provide correct non zero integer, or less than UINT_MAX pattern value" )
+with expansion:
+  "Provide correct non zero integer, or less than UINT_MAX pattern value"
+  equals: "Provide correct non zero integer, or less than UINT_MAX pattern
+  value"
+
+-------------------------------------------------------------------------------
+FindFigures - check for different figures in a matrix
+  Test interface throw with wrong pattern=UINT_MAX
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:60
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:67: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures((0x7fffffff * 2U + 1U)); }(), "Provide correct non zero integer, or less than UINT_MAX pattern value" )
+with expansion:
+  "Provide correct non zero integer, or less than UINT_MAX pattern value"
+  equals: "Provide correct non zero integer, or less than UINT_MAX pattern
+  value"
+
 ===============================================================================
-All tests passed (3 assertions in 1 test case)
+All tests passed (5 assertions in 1 test case)
 

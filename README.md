@@ -1,5 +1,6 @@
 # findfigures
 This is short program on C++, related to task provided from LucidLink company. Code in this program is based on floodFill algorithm referenced in tutorialspoint and no AI tools are used.
+Source code can be found also at GitHub: https://github.com/denimlm/findfigures/blob/main/README.md
 
 ### Task for resolution
 ## Here is the problem:
@@ -48,6 +49,29 @@ use of external databases, multi-threaded execution, etc.
 ### Assumptions
 Current implementation consider following assumptions:
  1. Matrix will be defined only with unsigned integer values
- 2. Patterns represent integer numbers in uint32 range
- 3.
+ 2. Patterns represent integer numbers in uint32 range (e.g. pattern = 1 is valid pattern)
+ 3. Only one kind of pattern at a time, from witch figures are created, is accessible in provided matrix
+```
+
+```
+# Program run
+ Program can be run after compilation
+ 1. Go to build/ folder and run cmake ..
+ 2. Run make
+ 3. Run program ./bin/example
+```
+```
+## Unit Tests
+Unit tests are provided according recomendations for quality requirements expected from the company
+Unt tests in this examle are based on Catch2 framework - https://github.com/catchorg/catch2
+A basic tests are prepared and provided with this implementation according edge cases and considered assumptions
+Unit tests are located at ut/ folder and can be run after compilation:
+1. Go to ut/
+2. Do cmake .
+3. Run make
+4. Run executable in ut_bin/ folder
+    a) in console ./ut_bin/findfigures_tests
+    b) or generate a report ./ut_bin/findfigures_tests -r console -s -o test_report.txt
+
+```
 ```

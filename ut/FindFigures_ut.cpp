@@ -5,7 +5,7 @@
 
 TEST_CASE("FindFigures - check for different figures in a matrix") {
     SECTION("Search for different figures in the matrix") {
-        std::vector<std::vector<int>> complex_canvas = {
+        std::vector<std::vector<uint32_t>> demo_matrix = {
             {1, 0, 0, 0, 0},
             {1, 0, 1, 1, 0},
             {0, 1, 0, 1, 0},
@@ -13,9 +13,9 @@ TEST_CASE("FindFigures - check for different figures in a matrix") {
             {0, 0, 0, 0, 1}
         };
 
-        FindFigures searcher(complex_canvas);
+        FindFigures searcher(demo_matrix);
 
-        auto results = searcher.findFigures(1); // 1 pattern to search
+        auto results = searcher.findFigures(1); // pattern of type '1' to search
 
         // 3 Figures mus be found
         REQUIRE(results == 3);
@@ -23,23 +23,51 @@ TEST_CASE("FindFigures - check for different figures in a matrix") {
     }
 
     SECTION("Check for no pattern behavior") {
-        std::vector<std::vector<int>> zero_canvas = {
+        std::vector<std::vector<uint32_t>> zero_matrix = {
             {0, 0, 0},
             {0, 0, 0}
         };
-        FindFigures searcher(zero_canvas);
+        FindFigures searcher(zero_matrix);
 
         auto results = searcher.findFigures(1);
         REQUIRE(results == 0);
     }
 
     SECTION("Test with empty matrix") {
-        std::vector<std::vector<int>> empty_canvas{};
+        std::vector<std::vector<uint32_t>> empty_matrix{};
 
         REQUIRE_THROWS_WITH([&](){
-            FindFigures searcher(empty_canvas);
+            FindFigures searcher(empty_matrix);
             }(),
             "Provided matrix cannot be empty."
+        );
+    }
+
+    SECTION("Test interface throw with wrong pattern=0") {
+        std::vector<std::vector<uint32_t>> matrix = {
+            {1, 0, 0},
+            {0, 0, 1}
+        };
+        FindFigures searcher(matrix);
+
+        REQUIRE_THROWS_WITH([&](){
+            searcher.findFigures(0);
+            }(),
+            "Provide correct non zero integer, or less than UINT_MAX pattern value"
+        );
+    }
+
+    SECTION("Test interface throw with wrong pattern=UINT_MAX") {
+        std::vector<std::vector<uint32_t>> matrix = {
+            {1, 0, 0},
+            {0, 0, 1}
+        };
+        FindFigures searcher(matrix);
+
+        REQUIRE_THROWS_WITH([&](){
+            searcher.findFigures(UINT_MAX);
+            }(),
+            "Provide correct non zero integer, or less than UINT_MAX pattern value"
         );
     }
 }
