@@ -2,28 +2,30 @@
 
 #include <vector>
 #include <queue>
+#include <cstdint>
 
 class FindFigures {
-    std::vector<std::vector<int>> localStorage;
+    std::vector<std::vector<uint32_t>> localStorage;
 public:
-    explicit FindFigures(std::vector<std::vector<int>>&out);
+    explicit FindFigures(std::vector<std::vector<uint32_t>>&out);
 
     FindFigures(const FindFigures&)=delete;
     FindFigures& operator=(const FindFigures&) = delete;
     FindFigures(FindFigures&&) = delete;
     FindFigures& operator=(FindFigures&&) = delete;
 
-    int findFigures(int pattern);
+    uint32_t findFigures(uint32_t pattern);
 
     void displayMatrix();
 
 private:
+
     /*
-        The Flood Filling Algorithm fills the internal region which is bounded by pixels with different colors.
-        This algorithm works by starting from a point inside the polygon and spreading outwards until the boundaries are reached.
-        A 4-Connected Flood Fill will be used for this class
+     * floodFill()
+     * This algorithm works by starting from a first pattern from witch figure is build and spreading outwards until the boundaries (no pattern) reached.
+     *
      */
-    void floodFill(std::queue<std::pair<int,int>>& coordinates, std::vector<std::vector<int>>&matrix, int initialPattern, int newPatterns);
+    void floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, std::vector<std::vector<uint32_t>>&matrix, uint32_t initialPattern, uint32_t newPatterns);
 
     void matrixValidation() const;
 };

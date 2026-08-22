@@ -45,3 +45,9 @@ The task does not aim to take too much of your time, the goal is to see how you 
 ready code. There is no need (still not forbidden) to further complicate the solution, such as the
 use of external databases, multi-threaded execution, etc.
 ```
+### Assumptions
+Current implementation consider following assumptions:
+ 1. Matrix will be defined only with unsigned integer values
+ 2. Patterns represent integer numbers in uint32 range
+ 3.
+```

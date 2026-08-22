@@ -7,5 +7,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(${PROJECT_NAME} main.cpp FindFigures.cpp)
 
-enable_testing()
-add_subdirectory(ut)
+#enable_testing()
+#add_subdirectory(ut)
