@@ -31,6 +31,7 @@ int main() {
         {1,0,0,0,1,0,0,0,1,0,0,0},
         {0,0,1,0,0,0,1,1,0,0,0,0},
         {0,1,1,1,0,0,0,1,1,0,0,1}};
+
     uint32_t figures = 0; //define variable to store number of figures found
 
     try{

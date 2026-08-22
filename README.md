@@ -1,5 +1,6 @@
 # findfigures
-This is short program on C++, related to task provided from LucidLink company. Code in this program is based on floodFill algorithm referenced in tutorialspoint and no AI tools are used.
+This is short program on C++, related to task provided from LucidLink company.
+Code in this program is based on populare approaches that can be found on sites like tutorialspoint.com and no AI tools are used.
 Source code can be found also at GitHub: https://github.com/denimlm/findfigures/blob/main/README.md
 
 ### Task for resolution
