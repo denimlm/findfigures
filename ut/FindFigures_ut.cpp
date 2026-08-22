@@ -53,21 +53,7 @@ TEST_CASE("FindFigures - check for different figures in a matrix") {
         REQUIRE_THROWS_WITH([&](){
             searcher.findFigures(0);
             }(),
-            "Provide correct non zero integer, or less than UINT_MAX pattern value"
-        );
-    }
-
-    SECTION("Test interface throw with wrong pattern=UINT_MAX") {
-        std::vector<std::vector<uint32_t>> matrix = {
-            {1, 0, 0},
-            {0, 0, 1}
-        };
-        FindFigures searcher(matrix);
-
-        REQUIRE_THROWS_WITH([&](){
-            searcher.findFigures(UINT_MAX);
-            }(),
-            "Provide correct non zero integer, or less than UINT_MAX pattern value"
+            "Provide correct non zero integer pattern value."
         );
     }
 }

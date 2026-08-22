@@ -1,4 +1,4 @@
-Randomness seeded to: 1213559918
+Randomness seeded to: 2721446421
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 findfigures_tests is a Catch2 v3.4.0 host application.
@@ -48,26 +48,11 @@ FindFigures - check for different figures in a matrix
 ...............................................................................
 
 /home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:53: PASSED:
-  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures(0); }(), "Provide correct non zero integer, or less than UINT_MAX pattern value" )
+  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures(0); }(), "Provide correct non zero integer pattern value." )
 with expansion:
-  "Provide correct non zero integer, or less than UINT_MAX pattern value"
-  equals: "Provide correct non zero integer, or less than UINT_MAX pattern
-  value"
-
--------------------------------------------------------------------------------
-FindFigures - check for different figures in a matrix
-  Test interface throw with wrong pattern=UINT_MAX
--------------------------------------------------------------------------------
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:60
-...............................................................................
-
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:67: PASSED:
-  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures((0x7fffffff * 2U + 1U)); }(), "Provide correct non zero integer, or less than UINT_MAX pattern value" )
-with expansion:
-  "Provide correct non zero integer, or less than UINT_MAX pattern value"
-  equals: "Provide correct non zero integer, or less than UINT_MAX pattern
-  value"
+  "Provide correct non zero integer pattern value." equals: "Provide correct
+  non zero integer pattern value."
 
 ===============================================================================
-All tests passed (5 assertions in 1 test case)
+All tests passed (4 assertions in 1 test case)
 

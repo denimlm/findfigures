@@ -1,7 +1,5 @@
 #include "FindFigures.hpp"
 #include <iostream>
-#include <cstdint>
-#include <climits>
 #include <set>
 
 FindFigures::FindFigures(std::vector<std::vector<uint32_t>>&out):localStorage{std::move(out)}{
@@ -12,8 +10,8 @@ FindFigures::FindFigures(std::vector<std::vector<uint32_t>>&out):localStorage{st
 * return number of figures found
 */
 uint32_t FindFigures::findFigures(uint32_t pattern=1){
-    if(pattern == 0 || pattern == UINT_MAX){
-        throw std::invalid_argument("Provide correct non zero integer, or less than UINT_MAX pattern value");
+    if(pattern == 0){
+        throw std::invalid_argument("Provide correct non zero integer pattern value.");
     }
     std::queue<std::pair<uint32_t,uint32_t>>storeCoordinates;
     std::set<std::pair<uint32_t, uint32_t>> visited;
