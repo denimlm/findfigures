@@ -51,7 +51,7 @@ use of external databases, multi-threaded execution, etc.
 Current implementation consider following assumptions:
  1. Matrix will be defined only with unsigned integer values
  2. Patterns represent integer numbers in uint32 range (e.g. pattern = 1 is valid pattern)
- 3. Only one kind of pattern at a time, from witch figures are created, is accessible in provided matrix
+ 3. Only one kind of pattern at a time, from witch figures are created, is provided matrix
 ```
 
 ```

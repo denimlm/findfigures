@@ -2,12 +2,17 @@
 #include <iostream>
 #include <set>
 
+/*
+ * Constructor with validation of provided resource
+ */
 FindFigures::FindFigures(std::vector<std::vector<uint32_t>>&out):localStorage{std::move(out)}{
     matrixValidation();
 }
-/* findFigures()
-* Search for provided patterns
-* return number of figures found
+/*
+* findFigures()
+* Main method for searching of figures in matrix
+* param[in] - pattern - uint32_t pattern to search
+* return figuresFound
 */
 uint32_t FindFigures::findFigures(uint32_t pattern=1){
     if(pattern == 0){
@@ -15,12 +20,12 @@ uint32_t FindFigures::findFigures(uint32_t pattern=1){
     }
     std::queue<std::pair<uint32_t,uint32_t>>storeCoordinates;
     std::set<std::pair<uint32_t, uint32_t>> visited;
-    uint32_t figurePattern = 0; //different than input pattern
+    uint32_t figuresFound = 0; //different than input pattern
     for(int row = 0; row < localStorage.size(); row++) {
         for(int col = 0; col < localStorage[0].size(); col++) {
             if(localStorage[row][col] == pattern) {
                 if(visited.find({row,col})==visited.end()){
-                    figurePattern++;
+                    figuresFound++;
                 }
                 visited.insert({row,col}); //Global visited
                 storeCoordinates.push({row,col}); //Local visited
@@ -29,11 +34,13 @@ uint32_t FindFigures::findFigures(uint32_t pattern=1){
             }
         }
     }
-    return figurePattern;
+    return figuresFound;
 }
+
 /*
-    * displayMatrix() - show collected matrix
-    */
+* displayMatrix()
+* Show matrix content on the screen
+*/
 void FindFigures::displayMatrix(){
     for(int i = 0; i < localStorage.size(); i++){
         for(int j = 0; j < localStorage[0].size(); j++){
@@ -49,10 +56,10 @@ void FindFigures::displayMatrix(){
 * param[in] - coordinates - current coordinates identified with pattern
 * param[in] - matrix - matrix elements contain figures drawn with patterns
 * param[in] - covered - contain alredy visited indexes from matrix
-* param[in] - initialPattern - pattern contain figures
+* param[in] - patternToSearch - pattern sustain figures
 */
 void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix,
-                            std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t initialPattern) {
+                            std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t patternToSearch) {
     uint32_t qX = 0;
     uint32_t qY = 0;
     uint32_t x = 0;
@@ -65,20 +72,23 @@ void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinate
         qX = front.first;
         qY = front.second;
         coordinates.pop();
-        covered.insert({qX,qY});
         for(std::pair<uint32_t,uint32_t>& it : direction) {
             x = qX + it.first;
             y = qY + it.second;
             // Check boundary conditions
             if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
-                matrix[x][y] == initialPattern && (covered.find({x,y})==covered.end()) ) {
+                matrix[x][y] == patternToSearch && (covered.find({x,y}) == covered.end()) ) {
                 covered.insert({x,y});
                 coordinates.push({x, y});
             }
         }
     }
 }
-//Simple validation function for constructor
+/*
+* matrixValidation()
+* Check boundary conditions for provided matrix
+* May throw an error
+*/
 void FindFigures::matrixValidation() const {
     if(localStorage.empty() || localStorage[0].empty()){
         throw std::invalid_argument("Provided matrix cannot be empty.");

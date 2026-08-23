@@ -1,3 +1,0 @@
-/home/osboxes/Documents/projects/lucidlink/findfigures/build/CMakeFiles/example.dir
-/home/osboxes/Documents/projects/lucidlink/findfigures/build/CMakeFiles/edit_cache.dir
-/home/osboxes/Documents/projects/lucidlink/findfigures/build/CMakeFiles/rebuild_cache.dir

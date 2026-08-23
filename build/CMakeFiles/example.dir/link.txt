@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/example.dir/main.cpp.o CMakeFiles/example.dir/FindFigures.cpp.o -o bin/example 
