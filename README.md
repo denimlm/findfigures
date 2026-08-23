@@ -52,6 +52,8 @@ Current implementation consider following assumptions:
  1. Matrix will be defined only with unsigned integer values
  2. Patterns represent integer numbers in uint32 range (e.g. pattern = 1 is valid pattern)
  3. Provided matrix have only one kind of pattern, from which figures are created, at a time.
+ 4. It is well know that vector is fastest than set container, however, set is used with it's find() capabilities in this task.
+ 5. Solution with non changing target matrix is provided, however, solution with matrix change is faster (5 times at least,[ 20us agaist 150us for vector and 200 us for set])
 ```
 
 ```
