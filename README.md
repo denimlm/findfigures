@@ -65,7 +65,7 @@ Current implementation consider following assumptions:
 ## Unit Tests
 Unit tests are provided according recomendations for quality requirements expected from the company
 Unt tests in this examle are based on Catch2 framework - https://github.com/catchorg/catch2
-A basic tests are prepared and provided with this implementation according edge cases and considered assumptions
+A basic tests are prepared and provided with this implementation according edge cases and considered assumptions.
 Unit tests are located at ut/ folder and can be run after compilation:
 1. Go to ut/
 2. Do cmake .
