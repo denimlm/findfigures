@@ -7,6 +7,7 @@ build/CMakeCache.txt
 build/CMakeFiles/
 build/CMakeFiles/
 build/cmake_install.cmake
+build/Makefile
 ut/CTestTestfile.cmake
 ut/Makefile
 

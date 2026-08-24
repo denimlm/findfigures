@@ -1,10 +1,11 @@
-#include "FindFigures.hpp"
+#include "FindFiguresInvasive.hpp"
 #include <iostream>
+
 
 /*
  * Constructor with validation of provided resource
  */
-FindFigures::FindFigures(std::vector<std::vector<int>>&out):localStorage{std::move(out)}{
+FindFiguresInvasive::FindFiguresInvasive(std::vector<std::vector<int>>&out):localStorage{std::move(out)}{
     matrixValidation();
 }
 /*
@@ -13,40 +14,28 @@ FindFigures::FindFigures(std::vector<std::vector<int>>&out):localStorage{std::mo
 * param[in] - pattern - uint32_t pattern to search
 * return figuresFound
 */
-uint32_t FindFigures::findFigures(int pattern=1) {
+uint32_t FindFiguresInvasive::findFigures(int pattern=1) {
     if(pattern == 0){
         throw std::invalid_argument("Provide correct non zero integer pattern value.");
     }
     std::queue<std::pair<int,int>>storeCoordinates;
-    std::vector<std::vector<bool>> visited(localStorage.size(), std::vector<bool>(localStorage[0].size(),false));
-    uint32_t figuresFound = 0; //different than input pattern
+
+    uint32_t figuresFound = 1; //different than input pattern
+
     for(int row = 0; row < localStorage.size(); row++) {
         for(int col = 0; col < localStorage[0].size(); col++) {
             if(localStorage[row][col] == pattern) {
-                if(visited[row][col]==false){
+                figuresFound++;
+                if(figuresFound == pattern){
                     figuresFound++;
                 }
-                visited[row][col]=true; //Global visited
                 storeCoordinates.push({row,col}); //Local visited
-
-                floodFill(storeCoordinates, localStorage, visited, pattern);
+                localStorage[row][col] = figuresFound;
+                floodFill(storeCoordinates, localStorage, pattern, figuresFound);
             }
         }
     }
-    return figuresFound;
-}
-
-/*
-* displayMatrix()
-* Show matrix content on the screen
-*/
-void FindFigures::displayMatrix(){
-    for(int i = 0; i < localStorage.size(); i++){
-        for(int j = 0; j < localStorage[0].size(); j++){
-            std::cout << localStorage[i][j] << " ";
-        }
-        std::cout << '\n';
-    }
+    return figuresFound-1;
 }
 
 /*
@@ -57,8 +46,8 @@ void FindFigures::displayMatrix(){
 * param[in] - covered - contain alredy visited indexes from matrix
 * param[in] - patternToSearch - pattern sustain figures
 */
-void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const std::vector<std::vector<int>>&matrix,
-                            std::vector<std::vector<bool>>&covered, const int patternToSearch) {
+void FindFiguresInvasive::floodFill(std::queue<std::pair<int,int>>& coordinates, std::vector<std::vector<int>>&matrix,
+                                    const int patternToSearch, int newPattern) {
     int qX = 0;
     int qY = 0;
     int x = 0;
@@ -76,11 +65,24 @@ void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const s
             y = qY + it.second;
             // Check boundary conditions
             if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
-                matrix[x][y] == patternToSearch && (covered[x][y]==false) ) {
-                covered[x][y]=true;
+                matrix[x][y] == patternToSearch) {
+                matrix[x][y] = newPattern;
                 coordinates.push({x, y});
             }
         }
+    }
+}
+
+/*
+* displayMatrix()
+* Show matrix content on the screen
+*/
+void FindFiguresInvasive::displayMatrix(){
+    for(int i = 0; i < localStorage.size(); i++){
+        for(int j = 0; j < localStorage[0].size(); j++){
+            std::cout << localStorage[i][j] << " ";
+        }
+        std::cout << '\n';
     }
 }
 /*
@@ -88,7 +90,7 @@ void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const s
 * Check boundary conditions for provided matrix
 * May throw an error
 */
-void FindFigures::matrixValidation() const {
+void FindFiguresInvasive::matrixValidation() const {
     if(localStorage.empty() || localStorage[0].empty()){
         throw std::invalid_argument("Provided matrix cannot be empty.");
     }

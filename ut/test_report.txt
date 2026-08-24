@@ -1,4 +1,4 @@
-Randomness seeded to: 60714193
+Randomness seeded to: 1631201233
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 findfigures_tests is a Catch2 v3.4.0 host application.
@@ -8,10 +8,10 @@ Run with -? for options
 FindFigures - check for different figures in a matrix
   Search for different figures in the matrix
 -------------------------------------------------------------------------------
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:7
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:9
 ...............................................................................
 
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:21: PASSED:
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:23: PASSED:
   REQUIRE( results == 3 )
 with expansion:
   3 == 3
@@ -20,10 +20,10 @@ with expansion:
 FindFigures - check for different figures in a matrix
   Check for no pattern behavior
 -------------------------------------------------------------------------------
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:25
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:27
 ...............................................................................
 
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:33: PASSED:
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:35: PASSED:
   REQUIRE( results == 0 )
 with expansion:
   0 == 0
@@ -32,10 +32,10 @@ with expansion:
 FindFigures - check for different figures in a matrix
   Test with empty matrix
 -------------------------------------------------------------------------------
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:36
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:38
 ...............................................................................
 
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:39: PASSED:
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:41: PASSED:
   REQUIRE_THROWS_WITH( [&](){ FindFigures searcher(empty_matrix); }(), "Provided matrix cannot be empty." )
 with expansion:
   "Provided matrix cannot be empty." equals: "Provided matrix cannot be empty."
@@ -44,15 +44,158 @@ with expansion:
 FindFigures - check for different figures in a matrix
   Test interface throw with wrong pattern=0
 -------------------------------------------------------------------------------
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:46
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:48
 ...............................................................................
 
-/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:53: PASSED:
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:55: PASSED:
   REQUIRE_THROWS_WITH( [&](){ searcher.findFigures(0); }(), "Provide correct non zero integer pattern value." )
 with expansion:
   "Provide correct non zero integer pattern value." equals: "Provide correct
   non zero integer pattern value."
 
+-------------------------------------------------------------------------------
+FindFiguresInvasive - check for different figures in a matrix with change of
+matrix
+  Search for different figures in the matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:65
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:79: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+FindFiguresInvasive - check for different figures in a matrix with change of
+matrix
+  Check for no pattern behavior
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:83
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:91: PASSED:
+  REQUIRE( results == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+FindFiguresInvasive - check for different figures in a matrix with change of
+matrix
+  Test with empty matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:94
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:97: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ FindFiguresInvasive searcher(empty_matrix); }(), "Provided matrix cannot be empty." )
+with expansion:
+  "Provided matrix cannot be empty." equals: "Provided matrix cannot be empty."
+
+-------------------------------------------------------------------------------
+FindFiguresInvasive - check for different figures in a matrix with change of
+matrix
+  Test interface throw with wrong pattern=0
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:104
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:111: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ searcher.findFigures(0); }(), "Provide correct non zero integer pattern value." )
+with expansion:
+  "Provide correct non zero integer pattern value." equals: "Provide correct
+  non zero integer pattern value."
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Search for different figures in the matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:121
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:135: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Check for no pattern behavior
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:139
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:147: PASSED:
+  REQUIRE( results == 0 )
+with expansion:
+  0 == 0
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Test with empty matrix
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:150
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:153: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ FindFiguresKind searcher(std::make_unique<FindFigures>(empty_matrix),1); }(), "Provided matrix cannot be empty." )
+with expansion:
+  "Provided matrix cannot be empty." equals: "Provided matrix cannot be empty."
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Test interface throw with wrong pattern=0
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:160
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:167: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ searcher.execute(); }(), "Provide correct non zero integer pattern value." )
+with expansion:
+  "Provide correct non zero integer pattern value." equals: "Provide correct
+  non zero integer pattern value."
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Test FindfiguresKind non invasive and invasive switch strategy
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:174
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:188: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:200: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+-------------------------------------------------------------------------------
+FindFiguresKind - check for different figures in a matrix with different
+approach
+  Test FindfiguresKind non invasive and invasive switch strategy
+-------------------------------------------------------------------------------
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:203
+...............................................................................
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:217: PASSED:
+  REQUIRE( results == 3 )
+with expansion:
+  3 == 3
+
+/home/osboxes/Documents/projects/lucidlink/findfigures/ut/FindFigures_ut.cpp:228: PASSED:
+  REQUIRE_THROWS_WITH( [&](){ searcher.execute(); }(), "Critical error in FindFiguresKind: nullptr." )
+with expansion:
+  "Critical error in FindFiguresKind: nullptr." equals: "Critical error in
+  FindFiguresKind: nullptr."
+
 ===============================================================================
-All tests passed (4 assertions in 1 test case)
+All tests passed (16 assertions in 3 test cases)
 

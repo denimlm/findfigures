@@ -15,7 +15,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 # Add testable application
-add_executable(findfigures_tests FindFigures_ut.cpp ../FindFigures.cpp)
+add_executable(findfigures_tests FindFigures_ut.cpp ../FindFigures.cpp ../FindFiguresInvasive.cpp ../FindFiguresKind.cpp)
 target_link_libraries(findfigures_tests PRIVATE Catch2::Catch2WithMain)
 
 target_include_directories(findfigures_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)

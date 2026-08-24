@@ -3,9 +3,9 @@
 #include <vector>
 #include <queue>
 #include <cstdint>
-#include <set>
+#include "IFindFiguresSwitch.hpp"
 
-class FindFigures {
+class FindFigures : public IFindFiguresSwitch {
     std::vector<std::vector<int>> localStorage;
 public:
     explicit FindFigures(std::vector<std::vector<int>>&out);
@@ -16,7 +16,7 @@ public:
     FindFigures& operator=(FindFigures&&) = delete;
 
 
-    uint32_t findFigures(int pattern);
+    uint32_t findFigures(int pattern) override;
     void displayMatrix();
 
 private:
