@@ -1,6 +1,5 @@
 #include "FindFigures.hpp"
 #include <iostream>
-#include <set>
 
 /*
  * Constructor with validation of provided resource
@@ -19,15 +18,15 @@ uint32_t FindFigures::findFigures(int pattern=1){
         throw std::invalid_argument("Provide correct non zero integer pattern value.");
     }
     std::queue<std::pair<int,int>>storeCoordinates;
-    std::set<std::pair<int, int>> visited;
+    std::vector<std::vector<bool>> visited(localStorage.size(), std::vector<bool>(localStorage[0].size(),false));
     uint32_t figuresFound = 0; //different than input pattern
     for(int row = 0; row < localStorage.size(); row++) {
         for(int col = 0; col < localStorage[0].size(); col++) {
             if(localStorage[row][col] == pattern) {
-                if(visited.find({row,col})==visited.end()){
+                if(visited[row][col]==false){
                     figuresFound++;
                 }
-                visited.insert({row,col}); //Global visited
+                visited[row][col]=true; //Global visited
                 storeCoordinates.push({row,col}); //Local visited
 
                 floodFill(storeCoordinates, localStorage, visited, pattern);
@@ -59,11 +58,11 @@ void FindFigures::displayMatrix(){
 * param[in] - patternToSearch - pattern sustain figures
 */
 void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const std::vector<std::vector<int>>&matrix,
-                            std::set<std::pair<int,int>>&covered, const int patternToSearch) {
-    uint32_t qX = 0;
-    uint32_t qY = 0;
-    uint32_t x = 0;
-    uint32_t y = 0;
+                            std::vector<std::vector<bool>>&covered, const int patternToSearch) {
+    int qX = 0;
+    int qY = 0;
+    int x = 0;
+    int y = 0;
     // Local navigation
     std::vector<std::pair<int,int>> direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};//directions [right, left, down, up]
 
@@ -77,8 +76,8 @@ void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const s
             y = qY + it.second;
             // Check boundary conditions
             if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
-                matrix[x][y] == patternToSearch && (covered.find({x,y}) == covered.end()) ) {
-                covered.insert({x,y});
+                matrix[x][y] == patternToSearch && (covered[x][y]==false) ) {
+                covered[x][y]=true;
                 coordinates.push({x, y});
             }
         }

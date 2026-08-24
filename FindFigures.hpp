@@ -21,7 +21,7 @@ public:
 
 private:
     void floodFill(std::queue<std::pair<int,int>>& coordinates, const std::vector<std::vector<int>>&matrix,
-                   std::set<std::pair<int,int>>&covered, const int patternToSearch);
+                   std::vector<std::vector<bool>>&covered, const int patternToSearch);
 
     void matrixValidation() const;
 };
