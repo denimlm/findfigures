@@ -5,7 +5,7 @@
 /*
  * Constructor with validation of provided resource
  */
-FindFigures::FindFigures(std::vector<std::vector<uint32_t>>&out):localStorage{std::move(out)}{
+FindFigures::FindFigures(std::vector<std::vector<int>>&out):localStorage{std::move(out)}{
     matrixValidation();
 }
 /*
@@ -14,12 +14,12 @@ FindFigures::FindFigures(std::vector<std::vector<uint32_t>>&out):localStorage{st
 * param[in] - pattern - uint32_t pattern to search
 * return figuresFound
 */
-uint32_t FindFigures::findFigures(uint32_t pattern=1){
+uint32_t FindFigures::findFigures(int pattern=1){
     if(pattern == 0){
         throw std::invalid_argument("Provide correct non zero integer pattern value.");
     }
-    std::queue<std::pair<uint32_t,uint32_t>>storeCoordinates;
-    std::set<std::pair<uint32_t, uint32_t>> visited;
+    std::queue<std::pair<int,int>>storeCoordinates;
+    std::set<std::pair<int, int>> visited;
     uint32_t figuresFound = 0; //different than input pattern
     for(int row = 0; row < localStorage.size(); row++) {
         for(int col = 0; col < localStorage[0].size(); col++) {
@@ -58,21 +58,21 @@ void FindFigures::displayMatrix(){
 * param[in] - covered - contain alredy visited indexes from matrix
 * param[in] - patternToSearch - pattern sustain figures
 */
-void FindFigures::floodFill(std::queue<std::pair<uint32_t,uint32_t>>& coordinates, const std::vector<std::vector<uint32_t>>&matrix,
-                            std::set<std::pair<uint32_t,uint32_t>>&covered, const uint32_t patternToSearch) {
+void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const std::vector<std::vector<int>>&matrix,
+                            std::set<std::pair<int,int>>&covered, const int patternToSearch) {
     uint32_t qX = 0;
     uint32_t qY = 0;
     uint32_t x = 0;
     uint32_t y = 0;
     // Local navigation
-    std::vector<std::pair<uint32_t,uint32_t>> direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};//directions [right, left, down, up]
+    std::vector<std::pair<int,int>> direction = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};//directions [right, left, down, up]
 
     while(!coordinates.empty()) {
-        std::pair<uint32_t,uint32_t>front = coordinates.front();
+        std::pair<int,int>front = coordinates.front();
         qX = front.first;
         qY = front.second;
         coordinates.pop();
-        for(std::pair<uint32_t,uint32_t>& it : direction) {
+        for(std::pair<int,int>& it : direction) {
             x = qX + it.first;
             y = qY + it.second;
             // Check boundary conditions

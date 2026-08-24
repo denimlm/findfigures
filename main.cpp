@@ -2,8 +2,6 @@
 #include <vector>
 #include <queue>
 #include "FindFigures.hpp"
-#include <climits>
-#include <chrono>
 
 // Find number of all individial figures
 /*
@@ -22,7 +20,7 @@
 
 int main() {
     //Initialize matrix with pattern "1"
-    std::vector<std::vector<uint32_t>>screen {
+    std::vector<std::vector<int>>screen {
         {1,0,0,0,0,0,1,1,1,1,0,0},
         {1,0,1,1,0,0,1,0,0,1,0,0},
         {0,1,0,1,0,0,1,0,1,1,0,0},
