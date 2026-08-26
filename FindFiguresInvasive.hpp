@@ -8,7 +8,7 @@
 class FindFiguresInvasive : public IFindFiguresSwitch {
     std::vector<std::vector<int>> localStorage;
 public:
-    explicit FindFiguresInvasive(std::vector<std::vector<int>>&out);
+    explicit FindFiguresInvasive(std::vector<std::vector<int>> out);
 
     FindFiguresInvasive(const FindFiguresInvasive&)=delete;
     FindFiguresInvasive& operator=(const FindFiguresInvasive&) = delete;

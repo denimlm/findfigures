@@ -5,7 +5,7 @@
 /*
  * Constructor with validation of provided resource
  */
-FindFiguresInvasive::FindFiguresInvasive(std::vector<std::vector<int>>&out):localStorage{std::move(out)}{
+FindFiguresInvasive::FindFiguresInvasive(std::vector<std::vector<int>> out):localStorage{std::move(out)}{
     matrixValidation();
 }
 /*

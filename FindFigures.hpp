@@ -8,7 +8,7 @@
 class FindFigures : public IFindFiguresSwitch {
     std::vector<std::vector<int>> localStorage;
 public:
-    explicit FindFigures(std::vector<std::vector<int>>&out);
+    explicit FindFigures(std::vector<std::vector<int>>out);
 
     FindFigures(const FindFigures&)=delete;
     FindFigures& operator=(const FindFigures&) = delete;

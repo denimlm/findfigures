@@ -4,7 +4,7 @@
 /*
  * Constructor with validation of provided resource
  */
-FindFigures::FindFigures(std::vector<std::vector<int>>&out):localStorage{std::move(out)}{
+FindFigures::FindFigures(std::vector<std::vector<int>>out):localStorage{std::move(out)}{
     matrixValidation();
 }
 /*
