@@ -79,5 +79,5 @@ Unit tests are located at ut/ folder and can be run after compilation:
 
 ```
 ```
-# NOTE: Take in mind that target company interview was NOT passed with those task solutions.
+# NOTE: Take in mind that target company interview was NOT passed with those task solution.
 ```
