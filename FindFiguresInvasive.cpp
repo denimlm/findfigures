@@ -20,10 +20,10 @@ uint32_t FindFiguresInvasive::findFigures(int pattern=1) {
     }
     std::queue<std::pair<int,int>>storeCoordinates;
 
-    uint32_t figuresFound = 1; //different than input pattern
+    int figuresFound = 1; //different than input pattern
 
-    for(int row = 0; row < localStorage.size(); row++) {
-        for(int col = 0; col < localStorage[0].size(); col++) {
+    for(int row = 0; row < (int)localStorage.size(); row++) {
+        for(int col = 0; col < (int)localStorage[0].size(); col++) {
             if(localStorage[row][col] == pattern) {
                 figuresFound++;
                 if(figuresFound == pattern){
@@ -35,7 +35,7 @@ uint32_t FindFiguresInvasive::findFigures(int pattern=1) {
             }
         }
     }
-    return figuresFound-1;
+    return static_cast<uint32_t>(figuresFound-1);
 }
 
 /*
@@ -64,7 +64,7 @@ void FindFiguresInvasive::floodFill(std::queue<std::pair<int,int>>& coordinates,
             x = qX + it.first;
             y = qY + it.second;
             // Check boundary conditions
-            if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
+            if(x >=0 && x < (int)matrix.size() && y >= 0 && y < (int)matrix[0].size() &&
                 matrix[x][y] == patternToSearch) {
                 matrix[x][y] = newPattern;
                 coordinates.push({x, y});
@@ -78,8 +78,8 @@ void FindFiguresInvasive::floodFill(std::queue<std::pair<int,int>>& coordinates,
 * Show matrix content on the screen
 */
 void FindFiguresInvasive::displayMatrix(){
-    for(int i = 0; i < localStorage.size(); i++){
-        for(int j = 0; j < localStorage[0].size(); j++){
+    for(int i = 0; i < (int)localStorage.size(); i++){
+        for(int j = 0; j < (int)localStorage[0].size(); j++){
             std::cout << localStorage[i][j] << " ";
         }
         std::cout << '\n';

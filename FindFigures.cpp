@@ -20,8 +20,8 @@ uint32_t FindFigures::findFigures(int pattern=1) {
     std::queue<std::pair<int,int>>storeCoordinates;
     std::vector<std::vector<bool>> visited(localStorage.size(), std::vector<bool>(localStorage[0].size(),false));
     uint32_t figuresFound = 0; //different than input pattern
-    for(int row = 0; row < localStorage.size(); row++) {
-        for(int col = 0; col < localStorage[0].size(); col++) {
+    for(int row = 0; row < (int)localStorage.size(); row++) {
+        for(int col = 0; col < (int)localStorage[0].size(); col++) {
             if(localStorage[row][col] == pattern) {
                 if(visited[row][col]==false){
                     figuresFound++;
@@ -33,16 +33,18 @@ uint32_t FindFigures::findFigures(int pattern=1) {
             }
         }
     }
+
     return figuresFound;
 }
+
 
 /*
 * displayMatrix()
 * Show matrix content on the screen
 */
 void FindFigures::displayMatrix(){
-    for(int i = 0; i < localStorage.size(); i++){
-        for(int j = 0; j < localStorage[0].size(); j++){
+    for(int i = 0; i < (int)localStorage.size(); i++){
+        for(int j = 0; j < (int)localStorage[0].size(); j++){
             std::cout << localStorage[i][j] << " ";
         }
         std::cout << '\n';
@@ -75,7 +77,7 @@ void FindFigures::floodFill(std::queue<std::pair<int,int>>& coordinates, const s
             x = qX + it.first;
             y = qY + it.second;
             // Check boundary conditions
-            if(x >=0 && x < matrix.size() && y >= 0 && y < matrix[0].size() &&
+            if(x >=0 && x < (int)matrix.size() && y >= 0 && y < (int)matrix[0].size() &&
                 matrix[x][y] == patternToSearch && (covered[x][y]==false) ) {
                 covered[x][y]=true;
                 coordinates.push({x, y});
