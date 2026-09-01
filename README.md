@@ -49,11 +49,12 @@ use of external databases, multi-threaded execution, etc.
 ```
 ### Assumptions
 Current implementation consider following assumptions:
- 1. Matrix will be defined only with unsigned integer values
- 2. Patterns represent integer numbers in uint32 range (e.g. pattern = 1 is valid pattern)
- 3. Provided matrix have only one kind of pattern, from which figures are created, at a time.
+ 1. Matrix will be defined only with integer values
+ 2. Patterns represent integer numbers in range (e.g. pattern = 1 is valid pattern)
+ 3. Provided matrix have only one kind of pattern at a time, from which figures are created.
  4. It is well know that vector is faster than set container for 'visited' matrix, however, set is used with it's find() capabilities in this task.
  5. Solution with non changing target matrix is provided, however, solution with matrix change is faster [for 100 elements:20us agaist 150us for vector and 200 us for set]
+ 6. Strategy pattern was added to complete example - out of the interview process
 ```
 
 ```
@@ -77,4 +78,6 @@ Unit tests are located at ut/ folder and can be run after compilation:
     b) or generate a report ./ut_bin/findfigures_tests -r console -s -o test_report.txt
 
 ```
+```
+# NOTE: Take in mind that target company interview was NOT passed with those task solutions.
 ```
